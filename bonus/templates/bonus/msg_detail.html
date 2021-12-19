@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block msg %}
+
+<section class="callout">
+    <div class="container">
+        <h1 class="display-4">意見與回饋</h1>
+    </div>
+    <div class="container px-4 px-lg-5">
+        <form class="needs-validation" novalidate>
+            <div class="form-row">
+                <div class="col-md-6 mb-3">
+                    <label for="account">帳號</label>
+                    <input type="text" class="form-control" value="{{msg.user_id}}" readonly>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="name">姓名</label>
+                    <input type="text" class="form-control" value="{{msg.user_id}}" readonly>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="col-md-6 mb-3">
+                    <label for="email">Email</label>
+                    <input type="text" class="form-control" value="{{msg.user_id}}" readonly>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="satisfaction">滿意度</label>
+                    <input type="text" class="form-control" value="{{msg.score}}" readonly>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="suggest">留言內容</label>
+                <textarea class="form-control" rows="6" readonly>
+                    {{msg.memo}}
+                </textarea>
+            </div>
+        </form>
+    </div>
+</section>
+
+{% endblock %}

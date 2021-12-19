@@ -22,4 +22,6 @@ urlpatterns = [
     path('', views.index, name='index'),
     path('index.html', views.index, name='index'),
     path('addSuggest.html', views.addSuggest, name='addSuggest'),
+    path('msgs/', views.MsgListView.as_view()),
+    path('msgs/<int:pk>', views.MsgDetailView.as_view(), name='msg-detail'),
 ]

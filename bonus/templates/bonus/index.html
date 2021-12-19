@@ -1,21 +1,5 @@
 {% extends "base.html" %}
 
-{% block navigation %}
-
-<a class="menu-toggle rounded" href="#"><i class="fas fa-bars"></i></a>
-<nav id="sidebar-wrapper">
-    <ul class="sidebar-nav">
-        <li class="sidebar-brand"><a href="#page-top">筆記交易平台</a></li>
-        <li class="sidebar-nav-item"><a href="#page-top">首頁</a></li>
-        <li class="sidebar-nav-item"><a href="#about">意見回饋</a></li>
-        <li class="sidebar-nav-item"><a href="#services">功能說明</a></li>
-        <li class="sidebar-nav-item"><a href="#portfolio">效益分析</a></li>
-        <li class="sidebar-nav-item"><a href="#contact">聯絡方式</a></li>
-    </ul>
-</nav>
-
-{% endblock %}
-
 {% block header %}
 
 <header class="masthead d-flex align-items-center">
@@ -41,11 +25,18 @@
     <div class="container px-4 px-lg-5 text-center">
         <div class="row gx-4 gx-lg-5 justify-content-center">
             <div class="col-lg-10">
-                <h2>Stylish Portfolio is the perfect theme for your next project!</h2>
+                <h2>關於我們</h2>
                 <p class="lead mb-5">
-
+                    <strong>以方便、即時為主，提供使用者良好的使用體驗</strong>
+                    <br>
+                    1.提供使用者快速查找到需要的筆記
+                    <br>
+                    2.採用RWD並能支援多平台與裝置
+                    <br>
+                    3.使用者設計取向，畫面簡單易操作
+                    <br>
                 </p>
-                <a class="btn btn-dark btn-xl" href="#services">What We Offer</a>
+                <a class="btn btn-dark btn-xl" href="#services">更多資訊</a>
             </div>
         </div>
     </div>
@@ -60,32 +51,31 @@
     <div class="container px-4 px-lg-5">
         <div class="content-section-heading">
             <h3 class="text-secondary mb-0">Services</h3>
-            <h2 class="mb-5">What We Offer</h2>
+            <h2 class="mb-5">提供了那些服務?</h2>
         </div>
         <div class="row gx-4 gx-lg-5">
             <div class="col-lg-3 col-md-6 mb-5 mb-lg-0">
                 <span class="service-icon rounded-circle mx-auto mb-3"><i class="icon-screen-smartphone"></i></span>
-                <h4><strong>Responsive</strong></h4>
-                <p class="text-faded mb-0">Looks great on any screen size!</p>
+                <h4><strong>方便</strong></h4>
+                <p class="text-faded mb-0">可在任何裝置觀看</p>
             </div>
             <div class="col-lg-3 col-md-6 mb-5 mb-lg-0">
                 <span class="service-icon rounded-circle mx-auto mb-3"><i class="icon-pencil"></i></span>
-                <h4><strong>Redesigned</strong></h4>
-                <p class="text-faded mb-0">Freshly redesigned for Bootstrap 5.</p>
+                <h4><strong>即時</strong></h4>
+                <p class="text-faded mb-0">下載、即時更改筆記</p>
             </div>
             <div class="col-lg-3 col-md-6 mb-5 mb-md-0">
                 <span class="service-icon rounded-circle mx-auto mb-3"><i class="icon-like"></i></span>
-                <h4><strong>Favorited</strong></h4>
+                <h4><strong>收藏</strong></h4>
                 <p class="text-faded mb-0">
-                    Millions of users
+                    收藏你喜愛的筆記
                     <i class="fas fa-heart"></i>
-                    Start Bootstrap!
                 </p>
             </div>
             <div class="col-lg-3 col-md-6">
                 <span class="service-icon rounded-circle mx-auto mb-3"><i class="icon-mustache"></i></span>
-                <h4><strong>Question</strong></h4>
-                <p class="text-faded mb-0">I mustache you a question...</p>
+                <h4><strong>分類</strong></h4>
+                <p class="text-faded mb-0">幫助你快速找到需要的資訊</p>
             </div>
         </div>
     </div>
@@ -98,12 +88,11 @@
 <section class="callout">
     <div class="container px-4 px-lg-5 text-center">
         <h2 class="mx-auto mb-5">
-            Welcome to
-            <em>your</em>
-            next website!
+            讓大家知道你的意見或回饋吧!!
         </h2>
-        <a class="btn btn-primary btn-xl" href="https://startbootstrap.com/theme/stylish-portfolio/">Download
-            Now!</a>
+        <a class="btn btn-primary btn-xl" href="https://startbootstrap.com/theme/stylish-portfolio/">
+            Click Now!
+        </a>
     </div>
 </section>
 
@@ -114,15 +103,17 @@
 <section class="content-section" id="portfolio">
     <div class="container px-4 px-lg-5">
         <div class="content-section-heading text-center">
-            <h3 class="text-secondary mb-0">Portfolio</h3>
-            <h2 class="mb-5">Recent Projects</h2>
+            <h3 class="text-secondary mb-0">Recent Notes</h3>
+            <h2 class="mb-5">
+                將使用者最後觀看的4篇筆記呈現出來
+            </h2>
         </div>
         <div class="row gx-0">
             <div class="col-lg-6">
                 <a class="portfolio-item" href="#!">
                     <div class="caption">
                         <div class="caption-content">
-                            <div class="h2">Stationary</div>
+                            <div class="h2">Recent Note1</div>
                             <p class="mb-0">A yellow pencil with envelopes on a clean, blue backdrop!</p>
                         </div>
                     </div>
@@ -134,7 +125,7 @@
                 <a class="portfolio-item" href="#!">
                     <div class="caption">
                         <div class="caption-content">
-                            <div class="h2">Ice Cream</div>
+                            <div class="h2">Recent Note2</div>
                             <p class="mb-0">A dark blue background with a colored pencil, a clip, and a tiny ice
                                 cream cone!</p>
                         </div>
@@ -147,7 +138,7 @@
                 <a class="portfolio-item" href="#!">
                     <div class="caption">
                         <div class="caption-content">
-                            <div class="h2">Strawberries</div>
+                            <div class="h2">Recent Note3</div>
                             <p class="mb-0">Strawberries are such a tasty snack, especially with a little sugar on
                                 top!</p>
                         </div>
@@ -160,7 +151,7 @@
                 <a class="portfolio-item" href="#!">
                     <div class="caption">
                         <div class="caption-content">
-                            <div class="h2">Workspace</div>
+                            <div class="h2">Recent Note4</div>
                             <p class="mb-0">A yellow workspace with some scissors, pencils, and other objects.</p>
                         </div>
                     </div>
@@ -187,18 +178,6 @@
 {% endblock %}
 
 {% block map %}
-
-<div class="map" id="contact">
-    <iframe
-        src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;aq=0&amp;oq=twitter&amp;sll=28.659344,-81.187888&amp;sspn=0.128789,0.264187&amp;ie=UTF8&amp;hq=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;t=m&amp;z=15&amp;iwloc=A&amp;output=embed"></iframe>
-    <br />
-    <small><a
-            href="https://maps.google.com/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;aq=0&amp;oq=twitter&amp;sll=28.659344,-81.187888&amp;sspn=0.128789,0.264187&amp;ie=UTF8&amp;hq=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;t=m&amp;z=15&amp;iwloc=A"></a></small>
-</div>
-
-{% endblock %}
-
-{% block footer %}
 
 <div class="map" id="contact">
     <iframe

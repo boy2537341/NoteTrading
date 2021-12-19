@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+
+{% block msg %}
+
+<header class="masthead d-flex align-items-center">
+  <div class="container px-4 px-lg-5 text-center">
+    <h1 class="mb-1">意見與回饋</h1>
+    <h5 class="mb-6">
+      <em>
+        使用者回饋資訊清單總攬
+      </em>
+    </h5>
+  </div>
+</header>
+
+<section class="content-section bg-light">
+  <div class="container px-4 px-lg-5 text-left">
+    <div class="row gx-4 gx-lg-5 justify-content-left">
+      <div class="col-lg-10">
+        <h2>意見與回饋總攬</h2>
+        <p class="lead mb-5">
+          {% if msg_list %}
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">姓名</th>
+              <th scope="col">帳號</th>
+              <th scope="col">滿意度</th>
+              <th scope="col">留言日期</th>
+              <th scope="col">詳細資訊</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for msg in msg_list %}
+            <tr>
+              <td>{{msg.user_id.name}}</td>
+              <td>{{msg.user_id.account}}</td>
+              <td>{{msg.score}}</td>
+              <td>{{ msg.date|date:'Y-m-d H:i' }}</td>
+              <td><a href="{{ msg.get_url }}">連結</a></td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+        {% else %}
+        There are no msg
+        {% endif %}
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}
