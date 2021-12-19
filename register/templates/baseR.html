@@ -36,15 +36,27 @@
         </ul>
     </nav>
 
-    {% block header %} {% endblock %}
-    {% block about %} {% endblock %}
-    {% block services %} {% endblock %}
-    {% block portfolio %} {% endblock %}
-    {% block callout %} {% endblock %}
-    {% block action %} {% endblock %}
-    {% block map %} {% endblock %}
+    <header class="callout d-flex align-items-center">
+        <div class="container px-4 px-lg-5 text-center">
+          <h1 class="mb-1">建議與想法</h1>
+          <h5 class="mb-6">
+            <em>
+                對於交易筆記平台有什麼建議嗎？讓大家都看看吧!
+            </em>
+          </h5>
+        </div>
+      </header>
 
-    {% block msg %} {% endblock %}
+      <section class="content-section bg-light">
+        <div class="container px-4 px-lg-5 text-left">
+          <div class="row gx-4 gx-lg-5 justify-content-left">
+            <div class="col-lg-10">
+              <h2>意見與回饋</h2>
+              {% block content %} {% endblock %}
+            </div>
+          </div>
+        </div>
+      </section>      
 
     <footer class="footer text-center">
         <div class="container px-4 px-lg-5">
@@ -71,9 +83,7 @@
             <p class="text-muted small mb-0">NoteTrading &copy; Website 2021</p>
         </div>
     </footer>
-
-    <!-- Scroll to Top Button-->
-    <a class="scroll-to-top rounded" href="#page-top"><i class="fas fa-angle-up"></i></a>
+    
     <!-- Bootstrap core JS-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Core theme JS-->

@@ -2,28 +2,15 @@ from django.views.generic import DetailView
 from django.views.generic import ListView
 from django.shortcuts import render
 
-from django.http import HttpResponse
-
 from .models import Msg, User
 
-
 def index(request):
-    userList = User.objects.all()
-
+    msgList = Msg.objects.all().order_by('-date')[:4] # 排序與數量
+    print (str(msgList))
     return render(
         request,
         'bonus/index.html',
-        context={'user_list': userList})
-
-
-def addSuggest(request):
-    userList = User.objects.all()
-
-    return render(
-        request,
-        'bonus/addSuggest.html',
-        context={'user_list': userList})
-
+        context={'msg_list': msgList})
 
 class MsgListView(ListView):
     model = Msg

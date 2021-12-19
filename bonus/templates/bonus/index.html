@@ -83,21 +83,6 @@
 
 {% endblock %}
 
-{% block callout %}
-
-<section class="callout">
-    <div class="container px-4 px-lg-5 text-center">
-        <h2 class="mx-auto mb-5">
-            讓大家知道你的意見或回饋吧!!
-        </h2>
-        <a class="btn btn-primary btn-xl" href="https://startbootstrap.com/theme/stylish-portfolio/">
-            Click Now!
-        </a>
-    </div>
-</section>
-
-{% endblock %}
-
 {% block portfolio %}
 
 <section class="content-section" id="portfolio">
@@ -105,60 +90,30 @@
         <div class="content-section-heading text-center">
             <h3 class="text-secondary mb-0">Recent Notes</h3>
             <h2 class="mb-5">
-                將使用者最後觀看的4篇筆記呈現出來
+                將最新的4篇筆記呈現出來
             </h2>
         </div>
         <div class="row gx-0">
+            {% for msg in msg_list %}
             <div class="col-lg-6">
-                <a class="portfolio-item" href="#!">
+                <a class="portfolio-item" href="{{ msg.get_url }}">
                     <div class="caption">
                         <div class="caption-content">
-                            <div class="h2">Recent Note1</div>
-                            <p class="mb-0">A yellow pencil with envelopes on a clean, blue backdrop!</p>
+                            <div class="h2">Recent Note{{ forloop.counter }}</div>
+                            <p class="mb-0">{{msg.user_id.name}}</p>
+                            <p class="mb-0">分數: {{msg.score}}</p>
+                            <p class="mb-0">{{msg.memo}}</p>
                         </div>
                     </div>
                     {% load static %}
-                    <img class="img-fluid" src="{% static 'assets/img/portfolio-1.jpg' %}" alt="..." />
+                    {% with y=forloop.counter|stringformat:"s" %}
+                    {% with image_static="assets/img/portfolio-"|add:y|add:".jpg" %}
+                    <img class="img-fluid" src={% static image_static %}/>
+                    {% endwith %}
+                    {% endwith %}
                 </a>
             </div>
-            <div class="col-lg-6">
-                <a class="portfolio-item" href="#!">
-                    <div class="caption">
-                        <div class="caption-content">
-                            <div class="h2">Recent Note2</div>
-                            <p class="mb-0">A dark blue background with a colored pencil, a clip, and a tiny ice
-                                cream cone!</p>
-                        </div>
-                    </div>
-                    {% load static %}
-                    <img class="img-fluid" src="{% static 'assets/img/portfolio-2.jpg' %}" alt="..." />
-                </a>
-            </div>
-            <div class="col-lg-6">
-                <a class="portfolio-item" href="#!">
-                    <div class="caption">
-                        <div class="caption-content">
-                            <div class="h2">Recent Note3</div>
-                            <p class="mb-0">Strawberries are such a tasty snack, especially with a little sugar on
-                                top!</p>
-                        </div>
-                    </div>
-                    {% load static %}
-                    <img class="img-fluid" src="{% static 'assets/img/portfolio-3.jpg' %}" alt="..." />
-                </a>
-            </div>
-            <div class="col-lg-6">
-                <a class="portfolio-item" href="#!">
-                    <div class="caption">
-                        <div class="caption-content">
-                            <div class="h2">Recent Note4</div>
-                            <p class="mb-0">A yellow workspace with some scissors, pencils, and other objects.</p>
-                        </div>
-                    </div>
-                    {% load static %}
-                    <img class="img-fluid" src="{% static 'assets/img/portfolio-4.jpg' %}" alt="..." />
-                </a>
-            </div>
+            {% endfor %}
         </div>
     </div>
 </section>
@@ -169,9 +124,9 @@
 
 <section class="content-section bg-primary text-white">
     <div class="container px-4 px-lg-5 text-center">
-        <h2 class="mb-4">The buttons below are impossible to resist...</h2>
-        <a class="btn btn-xl btn-light me-4" href="./addSuggest.html">Click Me!</a>
-        <a class="btn btn-xl btn-dark" href="#!">Look at Me!</a>
+        <h2 class="mb-4">讓大家知道你的意見或回饋吧!</h2>
+        <a class="btn btn-xl btn-light me-4" href="/apply">Click Now!</a>
+        <a class="btn btn-xl btn-dark" href="/bonus/msgs">View Now!</a>
     </div>
 </section>
 
@@ -180,11 +135,7 @@
 {% block map %}
 
 <div class="map" id="contact">
-    <iframe
-        src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;aq=0&amp;oq=twitter&amp;sll=28.659344,-81.187888&amp;sspn=0.128789,0.264187&amp;ie=UTF8&amp;hq=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;t=m&amp;z=15&amp;iwloc=A&amp;output=embed"></iframe>
-    <br />
-    <small><a
-            href="https://maps.google.com/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;aq=0&amp;oq=twitter&amp;sll=28.659344,-81.187888&amp;sspn=0.128789,0.264187&amp;ie=UTF8&amp;hq=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;t=m&amp;z=15&amp;iwloc=A"></a></small>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3639.8024636319583!2d120.64455241426336!3d24.178659578199426!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34691623a7988aa7%3A0x73dd146c41c3035a!2z6YCi55Sy5aSn5a24!5e0!3m2!1szh-TW!2stw!4v1639922042436!5m2!1szh-TW!2stw" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
 </div>
 
 {% endblock %}
