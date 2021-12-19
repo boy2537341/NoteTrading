@@ -2,11 +2,11 @@ from django.views.generic import DetailView
 from django.views.generic import ListView
 from django.shortcuts import render
 
-from .models import Msg, User
+from .models import Msg
 
 def index(request):
     msgList = Msg.objects.all().order_by('-date')[:4] # 排序與數量
-    print (str(msgList))
+
     return render(
         request,
         'bonus/index.html',
