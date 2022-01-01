@@ -1,0 +1,43 @@
+{% extends "baseR.html" %}
+
+{% block content %}
+
+<section class="content-section bg-light">
+  <div class="container px-4 px-lg-5 text-left">
+    <div class="row gx-4 gx-lg-5 justify-content-left">
+      <div class="col-lg-10">
+        <h2>意見與回饋總攬</h2>
+        <p class="lead mb-5">
+          {% if person_list %}
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">帳號</th>
+              <th scope="col">姓名</th>
+              <th scope="col">信箱</th>
+              <th scope="col">分數</th>
+              <th scope="col">詳細資訊</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for p in person_list %}
+            <tr>
+              <td>{{p.user_account}}</td>
+              <td>{{p.name}}</td>
+              <td>{{p.email}}</td>
+              <td>{{p.score}}</td>
+              <td><a href="{{ p.get_url }}">連結</a></td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+        {% else %}
+        There are no msg
+        {% endif %}
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

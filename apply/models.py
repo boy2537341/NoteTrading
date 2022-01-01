@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.urls import reverse 
 # Create your models here.
 
 class Person(models.Model):
@@ -17,7 +18,10 @@ class Person(models.Model):
     suggest_id = models.CharField(max_length=1, choices = SUGGEST_CHOICES, default='5')
     score = models.IntegerField(blank=False)
     memo = models.TextField(max_length=200, blank=False)
-    
+
+    def get_url(self):
+        return reverse('updateperson', args=[str(self.id)])
+
     class Meta:
         ordering = ['-name']
 

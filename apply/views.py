@@ -1,5 +1,7 @@
 from .models import Person
 from .forms import PersonModelForm
+from django.views.generic import DetailView
+from django.views.generic import ListView
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 
@@ -43,3 +45,29 @@ def myapply(request):
         return render(request, "apply/my_apply.html", context)
     else:
         return redirect("/accounts/login")     
+
+def all_person(request):
+    person_list = Person.objects.all()
+    context = {
+        'person_list': person_list
+    }
+    return render(request, "apply/all_person.html", context)
+
+from django.shortcuts import get_object_or_404
+
+# update the data based on the person's primay key
+def update_person(request, id):
+    obj = get_object_or_404(Person, id = id)
+    # obj = Person.objects.get(id = id)
+    form = PersonModelForm(request.POST or None, instance = obj)
+
+    print (">> form.is_bound: ", form.is_bound)
+    print (">> form.is_valid(): ", form.is_valid())
+    print (">> When form is not bound, it is not valid")
+    if form.is_valid():
+        form.save()
+        return render(request, "apply/update_success.html")
+ 
+    context = {'form':form} 
+ 
+    return render(request, "apply/update_person.html", context)

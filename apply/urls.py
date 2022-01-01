@@ -20,4 +20,6 @@ urlpatterns = [
     path('apply', views.apply, name='apply'),
     path('welcome/', views.welcome, name='welcome'),
     path('myapply/', views.myapply, name='my-apply'),
+    path('persons/', views.all_person, name='persons'),
+    path('updateperson/<int:id>', views.update_person, name='updateperson'),
 ]
