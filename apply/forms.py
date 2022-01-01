@@ -10,7 +10,7 @@ class PersonModelForm(forms.ModelForm):
 
         # widget 用來設定介面的呈現
         widgets = {
-            'account': forms.TextInput(attrs = {'class': 'form-control'}),
+            'user_account': forms.Select(attrs = {'class': 'form-control'}),
             'name': forms.TextInput(attrs = {'class': 'form-control'}),
             'email': forms.TextInput(attrs = {'class': 'form-control'}),
             'score': forms.NumberInput(attrs = {'class': 'form-control'}),
@@ -19,7 +19,7 @@ class PersonModelForm(forms.ModelForm):
         }
 
         labels = {
-            'account': '帳號',
+            'user_account': '帳號',
             'name': '姓名',
             'email': 'Email',
             'score': '分數',
@@ -36,9 +36,9 @@ class PersonModelForm(forms.ModelForm):
         return data
 
     def clean_account(self):
-        data = self.cleaned_data['account']
+        data = self.cleaned_data['memo']
 
-        if len(data) < 10 :
-            raise ValidationError('帳號長度不可小於10')
+        if len(data) < 20 :
+            raise ValidationError('留言內容不可小於20字')
 
         return data      

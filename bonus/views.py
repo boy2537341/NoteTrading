@@ -5,7 +5,9 @@ from django.shortcuts import render
 from .models import Msg
 
 def index(request):
-    msgList = Msg.objects.all().order_by('-date')[:4] # 排序與數量
+    print(request.user)
+    print(request.user)
+    msgList = Msg.objects.all().filter(person_id__account=str(request.user)).order_by('-date')[:4] # 排序與數量
 
     return render(
         request,
