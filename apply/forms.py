@@ -1,11 +1,11 @@
 from django import forms
-from .models import User
+from .models import Person
 from django.core.exceptions import ValidationError
 
 
-class UserModelForm(forms.ModelForm):
+class PersonModelForm(forms.ModelForm):
     class Meta:
-        model = User
+        model = Person
         fields = '__all__'  # __all__ 表示要全部呈現中所有欄位
 
         # widget 用來設定介面的呈現

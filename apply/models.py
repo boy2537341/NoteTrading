@@ -1,7 +1,7 @@
 from django.db import models
 # Create your models here.
 
-class User(models.Model):
+class Person(models.Model):
     SUGGEST_CHOICES = [
         ('1', '非常不滿意'),
         ('2', '不滿意'),

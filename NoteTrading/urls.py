@@ -19,7 +19,8 @@ from django.urls import path, include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('bonus/', include('bonus.urls')),
-    path('apply/', include('register.urls')),
+    path('apply/', include('apply.urls')),
+    path('accounts/', include('django.contrib.auth.urls')),
 ]
 
 from django.conf.urls.static import static
