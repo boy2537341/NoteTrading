@@ -35,8 +35,11 @@ class PersonModelForm(forms.ModelForm):
 
         return data
 
-    def clean_account(self):
+    def clean_memo(self):
         data = self.cleaned_data['memo']
+
+        if str(data)[0].isupper() != True :
+            raise ValidationError('第一個字母不是大寫')
 
         if len(data) < 20 :
             raise ValidationError('留言內容不可小於20字')
