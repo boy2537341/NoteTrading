@@ -36,13 +36,13 @@ def apply(request):
 def myapply(request):
     if request.user.is_authenticated:
         # get the person
-        person = Person.objects.filter(account=request.user)
-        if person:
+        person_list = Person.objects.filter(user_account=request.user)
+        if person_list:
             context = {
                 "user": request.user,
-                "person": person[0]
+                "person_list": person_list
             }
-        return render(request, "apply/my_apply.html", context)
+        return render(request, "apply/all_person.html", context)
     else:
         return redirect("/accounts/login")     
 
